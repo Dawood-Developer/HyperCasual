@@ -515,9 +515,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 440273176}
+  - component: {fileID: 440273178}
   m_Layer: 0
   m_Name: Penalty Door
-  m_TagString: Untagged
+  m_TagString: penaltyDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -539,6 +540,27 @@ Transform:
   - {fileID: 601217262}
   m_Father: {fileID: 1301047683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &440273178
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440273175}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.799794, y: 2.397108, z: 0.26364946}
+  m_Center: {x: 0.027709484, y: 0.10312557, z: 0.0059301853}
 --- !u!1001 &579845058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -902,9 +924,11 @@ GameObject:
   - component: {fileID: 670696739}
   - component: {fileID: 670696740}
   - component: {fileID: 670696741}
+  - component: {fileID: 670696743}
+  - component: {fileID: 670696742}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -964,6 +988,53 @@ MonoBehaviour:
   angle: 150
   runnerParent: {fileID: 1246407806}
   crowdCounter: {fileID: 1621131886}
+--- !u!54 &670696742
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670696737}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &670696743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670696737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ea21e076c5caa439506a4ff4f16ea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonusColor: {r: 0, g: 0, b: 0, a: 0}
+  penaltyColor: {r: 0, g: 0, b: 0, a: 0}
+  bonusDoorType: 0
+  bonusDoorSprite: {fileID: 0}
+  bonusDoorTxt: {fileID: 0}
+  PenaltyDoorType: 0
+  PenaltyDoorSprite: {fileID: 0}
+  PenaltyDoorTxt: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,7 +1261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772451396}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.26098, y: 0.000000016610082, z: -0.0000000044905226, w: 0.96534425}
+  m_LocalRotation: {x: 0.26098, y: -0.00000001661008, z: 0.0000000044905217, w: 0.96534425}
   m_LocalPosition: {x: 0, y: 7, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1419,7 +1490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.26098, y: 0.000000016610082, z: -0.0000000044905226, w: 0.96534425}
+  m_LocalRotation: {x: 0.26098, y: -0.00000001661008, z: 0.0000000044905217, w: 0.96534425}
   m_LocalPosition: {x: 0, y: 7, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1587,9 +1658,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1090574599}
+  - component: {fileID: 1090574601}
   m_Layer: 0
   m_Name: Bonus Door
-  m_TagString: Untagged
+  m_TagString: bonusDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1611,6 +1683,27 @@ Transform:
   - {fileID: 1740316338}
   m_Father: {fileID: 1301047683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1090574601
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090574598}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.799794, y: 2.397108, z: 0.26364946}
+  m_Center: {x: 0.027709484, y: 0.10312557, z: 0.0059301853}
 --- !u!1 &1246407805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,7 +1745,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1301047683}
-  - component: {fileID: 1301047684}
   m_Layer: 0
   m_Name: Door Renderer
   m_TagString: Untagged
@@ -1678,26 +1770,6 @@ Transform:
   - {fileID: 1029182494}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1301047684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1301047682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3ea21e076c5caa439506a4ff4f16ea2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bonusColor: {r: 0, g: 0, b: 0, a: 0}
-  penaltyColor: {r: 0, g: 0, b: 0, a: 0}
-  bonusDoorType: 0
-  bonusDoorSprite: {fileID: 0}
-  bonusDoorTxt: {fileID: 0}
-  PenaltyDoorType: 0
-  PenaltyDoorSprite: {fileID: 0}
-  PenaltyDoorTxt: {fileID: 0}
 --- !u!1 &1621131884
 GameObject:
   m_ObjectHideFlags: 0

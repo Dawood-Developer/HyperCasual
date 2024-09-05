@@ -25,7 +25,21 @@ public class DoorBehaviour : MonoBehaviour
 
     public void DoorManager()
     {
-        switch
+       
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("player"))
+        {
+            if (gameObject.CompareTag("bonusDoor"))
+            {
+                print("Bonus");
+            }
+            else if (gameObject.CompareTag("penaltyDoor"))
+            {
+                print("Penalty");
+            }
+        }
     }
 
 }
